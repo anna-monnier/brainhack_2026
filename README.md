@@ -12,11 +12,12 @@ I am passionnated about consciousness phenomena, also in psychiatry, and my work
 - EEG & ECG hyperscanning, 
 - Social neuroscience, 
 - and Phenomenology (subjective, first-person methods). 
+
 This practice is called Generative Neurophenomenology [1]
 
 ## Introduction
 
-This is the first analytical step of a larger study examining **interpersonal synchrony** in autism in **80 autistic/non-autistic dyads** (child-mother pairs) in relation with the felt experience of **Togetherness** (feeling one with a partner) ! This big project colelct EEG & ECG Hyperscanning data, videos and different forms of subjective experience (likert scales and qualitative interviews and body maps)
+The project is a larger study examining 🧠 **interpersonal synchrony** in **80 dyads** (mother-child pairs, autistic and non-autistic) in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) ! This big project collect EEG & ECG Hyperscanning data, videos and different forms of subjective experience (likert scales and more data)
 
 BUT ... Let's keep it simple to start !!! 
 Here, we focus only on a small sample of my piloting data, and focus on **EEG data** — in correlation with likert scales. 
@@ -27,7 +28,7 @@ Here, we focus only on a small sample of my piloting data, and focus on **EEG da
 
 ## Goal
 
-The goal is to **explore** inter-brain synchrony patterns between mothers and child (autistic or non-autistic), and to check if these neural dynamics relate to subjective experience reported.
+My goal is to **explore** inter-brain synchrony patterns between mothers and child (autistic or non-autistic), and to check if their neural dynamics relate to the subjective experience they reported.
 
 ---
 
@@ -39,7 +40,7 @@ Data collected under approved ethics protocols; raw data not publicly shared
 
 | 1 min | 1 min | 2 min | 2 min | 1 min | 1 min | 2 min | 2 min | 1 min | 1 min |
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| 👁️ Yeux ouverts | 👁️ Yeux fermés | 🤚 **Imitation spontanée** | 📅 **Planification journée** | 👁️ Yeux ouverts | 👁️ Yeux fermés | 📅 **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Yeux ouverts | 👁️ Yeux fermés |
+| 👁️ Yeux ouverts |  🙈  Yeux fermés | 🤚 **Imitation spontanée** | 🗣️  **Planification journée** | 👁️ Yeux ouverts |  🙈  Yeux fermés | 🗣️  **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Yeux ouverts | 👁️ Yeux fermés |
 
 - **Participants**: 9 pilot dyads (autistic and non-autistic child + mother)
 - **EEG**: Dual EGI HydroCel system (hyperscanning), continuous recording during 10 tasks (resting states and cooperative tasks)
