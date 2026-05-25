@@ -38,7 +38,6 @@ For this mission, the pipeline I am going to adapt to my data is not shared yet 
 |------|-----|
 | `Git / GitHub` | Version control and reproducibility |
 | `Claude Code` | Agentic pipeline development and adaptation |
-
 | `MNE-Python` | EEG preprocessing, filtering, ICA, connectivity |
 | `MNE-BIDS` | EEG to BIDS conversion |
 | `PyXDF` | XDF file reading |
