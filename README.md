@@ -17,10 +17,9 @@ This practice is called Generative Neurophenomenology [1]
 
 ## Introduction
 
-The project is a larger study examining 🧠 **interpersonal synchrony** in **80 dyads** (mother-child pairs, autistic and non-autistic) in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) ! This big project collect EEG & ECG Hyperscanning data, videos and different forms of subjective experience (likert scales and more data)
-
-BUT ... Let's keep it simple to start !!! 
-Here, we focus only on a small sample of my piloting data, and focus on **EEG data** — in correlation with likert scales. 
+The large project examine 🧠 **interpersonal synchrony** in **80 dyads** (mother-child pairs, autistic and non-autistic) 
+in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) ! 
+It includes EEG & ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)
 
 📄 [Project poster](docs/Poster.pdf)
 
@@ -28,7 +27,8 @@ Here, we focus only on a small sample of my piloting data, and focus on **EEG da
 
 ## Goal
 
-My goal is to **explore** inter-brain synchrony patterns between mothers and child (autistic or non-autistic), and to check if their neural dynamics relate to the subjective experience they reported.
+My goal is thus to **explore** inter-brain synchrony patterns between mothers and child (autistic or non-autistic) of the pilot **EEG data** (9 dyads)
+I want to to check if their neural dynamics relate to the subjective experience they reported. — So, also in correlation with likert scales. 
 
 ---
 
@@ -43,8 +43,8 @@ Data collected under approved ethics protocols; raw data not publicly shared
 | 👁️ Yeux ouverts |  🙈  Yeux fermés | 🤚 **Imitation spontanée** | 🗣️  **Planification journée** | 👁️ Yeux ouverts |  🙈  Yeux fermés | 🗣️  **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Yeux ouverts | 👁️ Yeux fermés |
 
 - **Participants**: 9 pilot dyads (autistic and non-autistic child + mother)
-- **EEG**: Dual EGI HydroCel system (hyperscanning), continuous recording during 10 tasks (resting states and cooperative tasks)
-- **Subjective measure**: Inclusion of the Other in the Self scale (IOS, 1–7 Likert) / task
+- **EEG**: Dual 128 EGI HydroCel system (high density hyperscanning), continuous recording during the 10 tasks
+- **Subjective measure**: Inclusion of the Other in the Self scale (IOS, 1–7 Likert) after each of the 10 tasks
 
 ![IOS Scale](docs/ios.png)
 
@@ -54,38 +54,51 @@ Data collected under approved ethics protocols; raw data not publicly shared
 
 | Tool | Use |
 |------|-----|
+| `Git / GitHub` | Version control and reproducibility |
+| `Claude Code` | Agentic pipeline development and adaptation |
 | [ppsp-hyperscanning-pipeline](https://github.com/ppsp-team/ppsp-hyperscanning-pipeline) | Main hyperscanning pipeline (adapted for our dataset) |
 | `MNE-Python` | EEG preprocessing, filtering, ICA, connectivity |
 | `PyPREP` | Automated bad channel detection and interpolation |
+| `AutoReject` | Automated epoch rejection based on peak-to-peak amplitude |
+| `ICALabel` | Automated ICA component classification (brain vs artifact) |
+| [HyPyP](https://github.com/ppsp-team/HyPyP) | Hyperscanning connectivity analysis (PLV, transfer entropy) |
 | `pandas` / `numpy` | Data handling and manipulation |
-| `scikit-learn` | Machine learning (group classification) |
 | `matplotlib` / `seaborn` | Visualization |
-| `Git / GitHub` | Version control and reproducibility |
-| `Claude Code` | Agentic pipeline development and adaptation |
+| `scikit-learn` | Machine learning (group classification) |
 
 ### Pipeline overview
 
 ```mermaid
 flowchart TD
-    A[📂 Raw EGI .mff files] --> B[🔍 Quality Check]
-    B --> C[📋 BIDSification\n+ IOS ratings integration]
-    C --> D[⚙️ Preprocessing\nFiltering · PyPREP · ICA]
-    D --> E[✂️ Epoching]
-    E --> F[🎵 Frequency Band Analysis\nDelta · Theta · Alpha · Beta · Gamma]
+    A[📂 Raw XDF files] --> B[🔍 Quality Check]
+    B --> C[📋 BIDSification]
+    C --> C1[🧠 EEG conversion\nXDF → BrainVision]
+    C --> C2[📊 IOS ratings integration\nphenotype/ + events.tsv]
+    C1 --> D[⚙️ Preprocessing\nFiltering · PyPREP · ICA]
+    C2 --> D
+    D --> D1[📏 Benchmarking\nQuality metrics validation]
+    D1 --> E[✂️ Epoching]
+    E --> E1[🎯 Task epochs\n10 tasks × IOS rating]
+    E --> E2[⭐ Peak connection moments\nManual annotation ~15s]
+    E1 --> F[🎵 Frequency Band Analysis\nDelta · Theta · Alpha · Beta · Gamma]
+    E2 --> F
     F --> G[🔗 Connectivity\nPLV · Transfer Entropy · AdjCircCorr]
     G --> H[📊 Integration\nEEG × IOS correlation]
     H --> I[📈 Statistics\nMixed models · Permutation tests · ML classification]
+
+    style A fill:#2d6a4f,color:#fff
+    style B fill:#2d6a4f,color:#fff
 ```
 ---
 
 ## Deliverables
 
-1. ⬜ Adapted EEG preprocessing pipeline for our EGI dataset
+1. ⬜ Adapted EEG preprocessing pipeline for our EGI dataset (reproducible GitHub repository with synthetic data)
 2. ⬜ Inter-brain connectivity analysis (PLV, transfer entropy) for 9 pilot dyads
 3. ⬜ Statistical comparison of inter-brain synchrony between groups (autistic/non-autistic dyads) and across the 10 tasks
 4. ⬜ Correlation between task-averaged inter-brain synchrony and IOS ratings per task
-5. ⬜ Jupyter Notebook going through analyses
-6. ⬜ Documented, reproducible GitHub repository (but still private for the moment)
+5. ⬜ Jupyter Notebook going through preprocessing 
+5. ⬜ Jupyter Notebook going through analyses 
 
 ---
 
@@ -102,12 +115,14 @@ The challenge of my project is to start with average data per tasks (tasks of 1 
 - Becoming autonomous in analysing and adapting the pipelines of my lab to my data !!!
 - Exploring the potentiality of vizualisations
 
+1. ⬜ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
+2. ⬜ **Git & GitHub workflows** — branching, pull requests, reproducible science
+
 1. ⬜ **EEG preprocessing in Python** — MNE-Python, PyPREP ...
 2. ⬜ **Hyperscanning connectivity analysis** — PLV, wPLI, transfer entropy, Adjusted CirrCorr
-3. ⬜ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
-4. ⬜ **Git & GitHub workflows** — branching, pull requests, reproducible science
-5. ⬜ **Statistics for small neuroimaging datasets** — mixed models, permutation tests, LOOCV
-6. ⬜ **Data visualization** — connectivity maps, topographies, inter-brain synchrony plots
+
+1. ⬜ **Statistics for small neuroimaging datasets** — mixed models, permutation tests, LOOCV
+2. ⬜ **Data visualization** — connectivity maps, topographies, inter-brain synchrony plots
 ---
 
 ## References and acknowledgements
