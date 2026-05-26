@@ -17,10 +17,11 @@ This practice is called Generative Neurophenomenology [1]
 
 ## Introduction
 
-A multimodal project examining 🧠 **interpersonal synchrony** in **80 dyads** (mother-child pairs, autistic and non-autistic) 
-in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) !
+A multimodal project | EEG + ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)
+Analyses examining | 🧠 **interpersonal synchrony** in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) !
+Cohorte | in **80 dyads** (mother-child pairs, autistic and non-autistic) 
 
-The large project includes EEG + ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)
+A critical need for bidsification !!!
 
 📄 [Project poster](docs/Poster.pdf)
 
@@ -60,7 +61,7 @@ The protocole follows 10 tasks
 
 | 1 min | 1 min | 2 min | 2 min | 1 min | 1 min | 2 min | 2 min | 1 min | 1 min |
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| 👁️ Yeux ouverts |  🙈  Yeux fermés | 🤚 **Imitation spontanée** | 🗣️  **Planification journée** | 👁️ Yeux ouverts |  🙈  Yeux fermés | 🗣️  **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Yeux ouverts | 👁️ Yeux fermés |
+| 👁️ Eyes open |  🙈  Eyes closed | 🤚 **Imitation spontanée** | 🗣️  **Planification journée** | 👁️ Eyes open |  🙈  Eyes closed | 🗣️  **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Eyes open |  🙈  Eyes closed |
 
 - **Participants**: 9 pilot dyads (autistic and non-autistic child + mother)
 - **EEG**: Dual 128 EGI HydroCel system (high density hyperscanning), continuous recording during the 10 tasks for LSL (LabRecorder) producing an xdf.
@@ -81,7 +82,7 @@ flowchart TD
     D --> D1[📏 Benchmarking\nQuality metrics validation]
     D1 --> E[✂️ Epoching]
     E --> E1[🎯 Task epochs\n10 tasks × IOS rating]
-    E --> E2[⭐ Peak connection moments\nManual annotation ~15s]
+    E --> E2[⭐ Bidsification manual annotation a posteriori - Peak connection moments\nof ~15s]
     E1 --> F[🎵 Frequency Band Analysis\nDelta · Theta · Alpha · Beta · Gamma]
     E2 --> F
     F --> G[🔗 Connectivity\nPLV · Transfer Entropy · AdjCircCorr]
@@ -92,6 +93,7 @@ flowchart TD
     style B fill:#2d6a4f,color:#fff
     style C fill:#2d6a4f,color:#fff
     style C1 fill:#2d6a4f,color:#fff
+    style C2 fill:#2d6a4f,color:#fff
 ```
 ---
 
@@ -119,11 +121,12 @@ The challenge of my project is to start with average data per tasks (tasks of 1 
 - Becoming autonomous in analysing and adapting the pipelines of my lab to my data !!!
 - Exploring the potentiality of vizualisations
 
-1. ⬜ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
-2. ⬜ **Git & GitHub workflows** — branching, pull requests, reproducible science
+1. ✅ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
+2. ✅ **Git & GitHub workflows** — branching, pull requests, reproducible science
 
-1. ⬜ **EEG preprocessing in Python** — MNE-Python, PyPREP ...
-2. ⬜ **Hyperscanning connectivity metrics** — PLV, wPLI, transfer entropy, Adjusted CirrCorr
+1. ⬜ **Bidsification** - pybids... annotation a posteriori / phenotype annotations
+2. ⬜ **EEG preprocessing in Python** — MNE-Python, PyPREP ...
+3. ⬜ **Hyperscanning connectivity metrics** — PLV, wPLI, transfer entropy, Adjusted CirrCorr
 
 1. ⬜ **Statistics for small neuroimaging datasets** — mixed models, permutation tests, LOOCV
 2. ⬜ **Data visualization** — connectivity maps, topographies, inter-brain synchrony plots
