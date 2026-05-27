@@ -28,29 +28,15 @@ This practice is called Generative Neurophenomenology [1]
 
 ---
 
-## 2 Goal for brainhack school / and tools and Methods
+## 2 Goals for brainhack school 2026
+
+> 🎯 Main goal: becoming autonomous in analysing and adapting my lab's pipelines to my data — and exploring the potential of visualizations!
 
 1. **PERSONAL GOAL** = **To explore** inter-brain synchrony patterns between mothers and child (autistic or non-autistic) of the pilot **EEG data** (9 dyads)
 I want to to check if their neural dynamics relate to the subjective experience they reported. — So, also in correlation with likert scales.
 For this mission, the pipeline I am going to adapt to my data is not shared yet with the world, and comes from my [PPSP lab](https://github.com/ppsp-team)
 
 3. **SHARED GOAL** = **To produce a bidsfication Notebook** for hyperscanning + annotations of subjective data (that can be useful for researcher practicing neurophenomenology and hyperscanning)
-
-| Tool | Use |
-|------|-----|
-| `Git / GitHub` | Version control and reproducibility |
-| `Claude Code` | Agentic pipeline development and adaptation |
-| `MNE-Python` | EEG preprocessing, filtering, ICA, connectivity |
-| `MNE-BIDS` | EEG to BIDS conversion |
-| `PyXDF` | XDF file reading |
-| `PyPREP` | Automated bad channel detection and interpolation |
-| `AutoReject` | Automated epoch rejection based on peak-to-peak amplitude |
-| `ICALabel` | Automated ICA component classification (brain vs artifact) |
-| `Zapline+` | Line noise removal (60Hz) |
-| [HyPyP](https://github.com/ppsp-team/HyPyP) | Hyperscanning connectivity analysis (PLV, transfer entropy) |
-| `pandas` / `numpy` | Data handling and manipulation |
-| `matplotlib` / `seaborn` | Visualization |
-| `scikit-learn` | Machine learning (group classification) |
 
 ---
 
@@ -60,9 +46,18 @@ Data collected under approved ethics protocols; raw data not publicly shared
 
 The protocole follows 10 tasks
 
-| 1 min | 1 min | 2 min | 2 min | 1 min | 1 min | 2 min | 2 min | 1 min | 1 min |
-|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| 👁️ Eyes open |  🙈  Eyes closed | 🤚 **Imitation spontanée** | 🗣️  **Planification journée** | 👁️ Eyes open |  🙈  Eyes closed | 🗣️  **Planification journée** | 🤚 **Imitation spontanée** | 👁️ Eyes open |  🙈  Eyes closed |
+| Duration | Task |
+|----------|------|
+| 1 min | ⬜ 👁️ Eyes open |
+| 1 min | ⬜ 🙈 Eyes closed |
+| 2 min | 🟦 🤚 **Spontaneous imitation** |
+| 2 min | 🟩 🗣️ **Day planning** |
+| 1 min | ⬜ 👁️ Eyes open |
+| 1 min | ⬜ 🙈 Eyes closed |
+| 2 min | 🟩 🗣️ **Day planning** |
+| 2 min | 🟦 🤚 **Spontaneous imitation** |
+| 1 min | ⬜ 👁️ Eyes open |
+| 1 min | ⬜ 🙈 Eyes closed |
 
 - **Participants**: 9 pilot dyads (autistic and non-autistic child + mother)
 - **EEG**: Dual 128 EGI HydroCel system (high density hyperscanning), continuous recording during the 10 tasks for LSL (LabRecorder) producing an xdf.
@@ -77,9 +72,12 @@ flowchart TD
     A[📂 Raw XDF files] --> B[🔍 Quality Check]
     B --> C[📋 BIDSification]
     C --> C1[🧠 EEG conversion\nXDF → BrainVision]
-    C --> C2[📊 IOS ratings integration\nphenotype/ + events.tsv]
+    C --> C2[📊 IOS ratings integration\nevents.tsv]
+    C --> C3[📊 Personality Questionnaires ratings integration\nphenotype]
+
     C1 --> D[⚙️ Preprocessing\nFiltering · PyPREP · ICA]
     C2 --> D
+    C3 --> D
     D --> D1[📏 Benchmarking\nQuality metrics validation]
     D1 --> E[✂️ Epoching]
     E --> E1[🎯 Task epochs\n10 tasks × IOS rating]
@@ -100,9 +98,9 @@ flowchart TD
 
 ## Deliverables
 
-1. ⬜ Jupyter Notebook going through bidsification and annotation with for hyperscanning folks
+1. ⬜ Jupyter Notebook going through bidsification process and a posteriori annotations for hyperscanning folks
 
-For the goal of exploration:
+For the goal of personal exploration goal:
 
 1. ⬜ Adapted EEG preprocessing pipeline for my pilot (not shared)
 2. ⬜ Inter-brain connectivity analysis (PLV, transfer entropy) for 9 pilot dyads
@@ -111,26 +109,25 @@ For the goal of exploration:
 
 ---
 
-## Visualization
+## Skills, Tools & Methods
 
-Also, the challenge of my project is to start with average data per tasks (tasks of 1 or 2 minutes) to a relevant choice of metrics and a vizualisation of the dynamics of the synchronisation (directionality, switches, metastability, evolution of regimes of synchrony...)
+| Status | Skill | Tools |
+|--------|-------|-------|
+| ✅ | **Agentic coding** — using AI to assist pipeline adaptation | `Claude Code` |
+| ✅ | **Git & GitHub workflows** — branching, pull requests, reproducible science | `Git / GitHub` |
+| ⬜ | **Pipeline adaptation** — adapting the SCAALE hyperscanning pipeline to my pilot dataset | [ppsp-hyperscanning-pipeline](https://github.com/ppsp-team/ppsp-hyperscanning-pipeline) |
+| ⬜ | **BIDSification** — phenotype annotations, a posteriori BIDS annotations | `MNE-BIDS` · `PyBIDS` · `PyXDF` |
+| ⬜ | **EEG preprocessing** — filtering, bad channels, ICA, line noise removal | `MNE-Python` · `PyPREP` · `AutoReject` · `ICALabel` · `Zapline+` |
+| ⬜ | **Hyperscanning connectivity** — PLV, wPLI, transfer entropy, AdjCircCorr | [HyPyP](https://github.com/ppsp-team/HyPyP) |
+| ⬜ | **Statistics for small datasets** — mixed models, permutation tests | `pandas` · `numpy` · `scikit-learn` |
+| ⬜ | **Data visualization** — connectivity maps, topographies, synchrony plots | `matplotlib` · `seaborn` |
 
 ---
 
-## Skills I Want to Learn
+## Visualization
 
-- Becoming autonomous in analysing and adapting the pipelines of my lab to my data !!!
-- Exploring the potentiality of vizualisations
-
-1. ✅ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
-2. ✅ **Git & GitHub workflows** — branching, pull requests, reproducible science
-
-1. ⬜ **Bidsification** - pybids... phenotype annotations + a posteriori annotations
-2. ⬜ **EEG preprocessing in Python** — MNE-Python, PyPREP ...
-3. ⬜ **Hyperscanning connectivity metrics** — PLV, wPLI, transfer entropy, Adjusted CirrCorr
-
-1. ⬜ **Statistics for small neuroimaging datasets** — mixed models, permutation tests, LOOCV
-2. ⬜ **Data visualization** — connectivity maps, topographies, inter-brain synchrony plots
+When arrived at that stage, the next challenge of my project is to move from average data analysis per task (tasks of 1 or 2 minutes) to identify / vizualise the dynamics of the synchronisation (choice of metrics, directionality, switches, metastability, evolution of regimes of synchrony...)
+   
 ---
 
 ## References and acknowledgements
