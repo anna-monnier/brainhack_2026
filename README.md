@@ -1,11 +1,11 @@
-# 🧠 Inter-Brain Synchrony in Autism: A Hyperscanning EEG Study
+# 🧠 Interpersonal Synchrony in Autism: Bidsification of multimodal data !
 
 <a href="https://github.com/anna-monnier">
   <img src="https://avatars.githubusercontent.com/u/52865298?v=4?s=100" width="100px;" alt=""/>
   <br /><sub><b>anna-monnier</b></sub>
 </a>
 
-### Short bio: a "generative neurophenomenology" PhD !
+### Short bio: a "Generative Neurophenomenology" PhD !
 
 I am a PhD student in Psychiatric Sciences at Université de Montréal - CHU Sainte-Justine !
 My work is at the intersection of conscious phenomena & psychiatry and my methods of investigation:
@@ -17,11 +17,12 @@ This practice is called Generative Neurophenomenology [1]
 
 ## Introduction
 
-A multimodal project | EEG + ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)
-Analyses examining | 🧠 **interpersonal synchrony** in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) !
-Cohorte | in **80 dyads** (mother-child pairs, autistic and non-autistic) 
+| A multimodal project | EEG + ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)|
+|------|-----|
+| Analyses | Examining 🧠 **interpersonal synchrony** in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) ! |
+| Cohorte | in **80 dyads**, mother-child pairs, autistic and non-autistic |
 
-A critical need for bidsification !!!
+--> The project presents **a critical need for bidsification !!!**
 
 📄 [Project poster](docs/Poster.pdf)
 
@@ -33,7 +34,7 @@ A critical need for bidsification !!!
 I want to to check if their neural dynamics relate to the subjective experience they reported. — So, also in correlation with likert scales.
 For this mission, the pipeline I am going to adapt to my data is not shared yet with the world, and comes from my [PPSP lab](https://github.com/ppsp-team)
 
-3. **SHARED GOAL** = **To produce a bidsfication pipeline** for hyperscanning + annotations of subjective data (that can be useful for researcher practicing neurophenomenology and hyperscanning)
+3. **SHARED GOAL** = **To produce a bidsfication Notebook** for hyperscanning + annotations of subjective data (that can be useful for researcher practicing neurophenomenology and hyperscanning)
 
 | Tool | Use |
 |------|-----|
@@ -112,7 +113,7 @@ For the goal of exploration:
 
 ## Visualization
 
-The challenge of my project is to start with average data per tasks (tasks of 1 or 2 minutes) to a relevant choice of metrics and a vizualisation of the dynamics of the synchronisation (directionality, switches, metastability, evolution of regimes of synchrony...)
+Also, the challenge of my project is to start with average data per tasks (tasks of 1 or 2 minutes) to a relevant choice of metrics and a vizualisation of the dynamics of the synchronisation (directionality, switches, metastability, evolution of regimes of synchrony...)
 
 ---
 
@@ -124,7 +125,7 @@ The challenge of my project is to start with average data per tasks (tasks of 1 
 1. ✅ **Agentic coding with Claude Code** — using AI to assist pipeline adaptation
 2. ✅ **Git & GitHub workflows** — branching, pull requests, reproducible science
 
-1. ⬜ **Bidsification** - pybids... annotation a posteriori / phenotype annotations
+1. ⬜ **Bidsification** - pybids... phenotype annotations + a posteriori annotations
 2. ⬜ **EEG preprocessing in Python** — MNE-Python, PyPREP ...
 3. ⬜ **Hyperscanning connectivity metrics** — PLV, wPLI, transfer entropy, Adjusted CirrCorr
 
