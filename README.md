@@ -1,4 +1,4 @@
-# 🧠 Interpersonal Synchrony in Autism: Bidsification of multimodal data !
+# 🧠 Contributing to a BIDS Standard for Multimodal and EEG Hyperscanning
 
 <a href="https://github.com/anna-monnier">
   <img src="https://avatars.githubusercontent.com/u/52865298?v=4?s=100" width="100px;" alt=""/>
@@ -17,14 +17,45 @@ This practice is called Generative Neurophenomenology [1]
 
 ## Introduction
 
-| A multimodal project | EEG + ECG Hyperscanning data, videos + various forms of subjective experience (likert scales and more qualitative data)|
+Brain Imaging Data Structure (BIDS) is the leading standard for organizing neuroimaging data, but it was not originally designed for **hyperscanning** — the simultaneous recording of two or more brains. This project contributes to filling this gap by documenting and sharing the decisions made to adapt BIDS to a naturalistic piloting EEG hyperscanning dataset.
+
+| A multimodal project | EEG + ECG Hyperscanning data, videos + multiple subjective experience metrics|
 |------|-----|
 | Analyses | Examining 🧠 **interpersonal synchrony** in relation with the felt experience of 👥 **Togetherness** (feeling one with a partner) ! |
-| Cohorte | in **80 dyads**, mother-child pairs, autistic and non-autistic |
+| Big Cohorte | **80 dyads**, mother-child pairs, autistic and non-autistic |
 
 --> The project presents **a critical need for bidsification !!!**
 
 📄 [Project poster](docs/Poster.pdf)
+
+### Why this matters
+
+As hyperscanning studies multiply, the field needs shared conventions for:
+- Representing **dyadic/group relationships** between participants
+- Integrating **subjective and phenomenological data** alongside neural signals
+- Handling **multi-modal recordings** (EEG + ECG + motion + subjective) in a unified structure
+
+This pilot dataset and its accompanying pipeline aim to serve as a concrete, reproducible example that can inform future BIDS extensions for social and interpersonal neuroscience.
+
+### Key standardization challenges
+
+| Challenge | Our solution | Status |
+|-----------|-------------|--------|
+| **Dyad metadata** — BIDS has no concept of a dyad (two linked participants) | `dyads.tsv` custom file (`.bidsignore` to pass validator) | 🚧 Non-standard, needs community discussion |
+| **Subjective ratings per task** — subjective ratings tied to specific interaction segments | Injected as a column in `events.tsv` per task | ✅ BIDS-compatible via events extension |
+| **Peak connection moments** — phenomenologically-anchored ~15s epochs | BIDS annotation in `events.tsv` (`trial_type: peak_connection`) | ✅ BIDS-compatible |
+| **Padding** — 2s buffer pre/post task for filter edge artefacts | `onset = 2s` convention, documented in sidecar JSON | 🚧 Convention maison, not yet standardized |
+| **Excluded participants** — set-aside subjects kept in `participants.tsv` for stable numbering | `processing_status` column in `participants.tsv` | 🚧 Not in BIDS spec |
+| **XDF → BrainVision conversion** — EGI/LSL format not natively in BIDS | Custom converter using `pyxdf` + `pybv` + `MNE-BIDS` | ✅ Output is BIDS-compliant |
+
+### Active community discussions
+
+There is currently **no official BIDS Extension Proposal (BEP) for hyperscanning** — this is an open gap in the community. Here are the key ongoing discussions this project connects to:
+
+- 📌 **GitHub Issue #402** — *"Hyperscanning data storage"* (opened 2020, still open): the original BIDS discussion on how to represent dyadic data, never finalized due to lack of contributors → https://github.com/bids-standard/bids-specification/issues/402
+- 💬 **Neurostars** — *"BIDS structure for longitudinal dyadic data"* (2023): community discussion on using the `acq` entity as dyad identifier, validated by core BIDS developer Rémi Gau → https://neurostars.org/t/bids-structure-for-longitudinal-dyadic-data/26173
+- 📖 **BIDS Starter Kit FAQ** — official BIDS guidance on hyperscanning (using `ses-dyadic` convention) → https://bids-standard.github.io/bids-starter-kit/FAQ.html
+- 🧠 **OHBM OSSIG / Brainhack Mattermost** — `#bids` channel with 5000+ members → https://mattermost.brainhack.org
 
 ---
 
