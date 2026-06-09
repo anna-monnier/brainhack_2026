@@ -109,14 +109,11 @@ flowchart TD
     C1 --> D[⚙️ Preprocessing\nFiltering · PyPREP · ICA]
     C2 --> D
     C3 --> D
-    D --> D1[📏 Benchmarking\nQuality metrics validation]
+    D --> D1[📏 Benchmarking\nQuality metrics validation\nPyPREP/Zapline+/ICA & AR parameters]
     D1 --> E[✂️ Epoching]
-    E --> E1[🎯 Task epochs\n10 tasks × IOS rating]
-    E --> E2[⭐ Bidsification manual annotation a posteriori - Peak connection moments\nof ~15s]
-    E1 --> F[🎵 Frequency Band Analysis\nDelta · Theta · Alpha · Beta · Gamma]
-    E2 --> F
+    E --> F[🎵 Frequency Band Analysis\nDelta · Theta · Alpha · Beta · Gamma]
     F --> G[🔗 Connectivity\nPLV · Transfer Entropy · AdjCircCorr]
-    G --> H[📊 Integration\nEEG × IOS correlation]
+    G --> H[📊 Integration-Correlation/Task\nConnectivity metrics × IOS correlation]
     H --> I[📈 Statistics\nMixed models · Permutation tests · ML classification]
 
     style A fill:#2d6a4f,color:#fff
@@ -124,16 +121,20 @@ flowchart TD
     style C fill:#2d6a4f,color:#fff
     style C1 fill:#2d6a4f,color:#fff
     style C2 fill:#2d6a4f,color:#fff
+    style C3 fill:#e07b00,color:#fff
+    style D fill:#1a6b3a,color:#fff
+    style D1 fill:#1a6b3a,color:#fff
 ```
 ---
 
 ## Deliverables
 
-1. ⬜ Jupyter Notebook going through bidsification process and a posteriori annotations for hyperscanning folks
+1. ✅ Jupyter Notebook going through bidsification process for a multimodal hyperscanning project 
+--> and a posteriori annotations is not treated here yet
 
 For the goal of personal exploration goal:
 
-1. ⬜ Adapted EEG preprocessing pipeline for my pilot (not shared)
+1. ✅ Adapted EEG preprocessing pipeline for my pilot (not shared)
 2. ⬜ Inter-brain connectivity analysis (PLV, transfer entropy) for 9 pilot dyads
 3. ⬜ Statistical comparison of inter-brain synchrony between groups (autistic/non-autistic dyads) and across the 10 tasks
 4. ⬜ Correlation between task-averaged inter-brain synchrony and IOS ratings per task
@@ -146,9 +147,9 @@ For the goal of personal exploration goal:
 |--------|-------|-------|
 | ✅ | **Agentic coding** — using AI to assist pipeline adaptation | `Claude Code` |
 | ✅ | **Git & GitHub workflows** — branching, pull requests, reproducible science | `Git / GitHub` |
-| ⬜ | **Pipeline adaptation** — adapting the SCAALE hyperscanning pipeline to my pilot dataset | [ppsp-hyperscanning-pipeline](https://github.com/ppsp-team/ppsp-hyperscanning-pipeline) |
-| ⬜ | **BIDSification** — phenotype annotations, a posteriori BIDS annotations | `MNE-BIDS` · `PyBIDS` · `PyXDF` |
-| ⬜ | **EEG preprocessing** — filtering, bad channels, ICA, line noise removal | `MNE-Python` · `PyPREP` · `AutoReject` · `ICALabel` · `Zapline+` |
+| ✅ | **Pipeline adaptation** — adapting the SCAALE hyperscanning pipeline to my pilot dataset | [ppsp-hyperscanning-pipeline](https://github.com/ppsp-team/ppsp-hyperscanning-pipeline) |
+| ✅ | **BIDSification** — phenotype annotations, a posteriori BIDS annotations | `MNE-BIDS` · `PyBIDS` · `PyXDF` |
+| ✅ | **EEG preprocessing** — filtering, bad channels, ICA, line noise removal | `MNE-Python` · `PyPREP` · `AutoReject` · `ICALabel` · `Zapline+` |
 | ⬜ | **Hyperscanning connectivity** — PLV, wPLI, transfer entropy, AdjCircCorr | [HyPyP](https://github.com/ppsp-team/HyPyP) |
 | ⬜ | **Statistics for small datasets** — mixed models, permutation tests | `pandas` · `numpy` · `scikit-learn` |
 | ⬜ | **Data visualization** — connectivity maps, topographies, synchrony plots | `matplotlib` · `seaborn` |
